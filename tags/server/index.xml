@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Server on Home Hub</title>
+    
+    
+    
+    <link>https://homehub.tech/tags/server/</link>
+    <description>Recent content in Server on Home Hub</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-gb</language>
+    <copyright>Home Hub</copyright>
+    <lastBuildDate>Tue, 07 Apr 2020 12:31:16 +0000</lastBuildDate>
+    
+	<atom:link href="https://homehub.tech/tags/server/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Server Build Spec</title>
+      <link>https://homehub.tech/server-build-spec/</link>
+      <pubDate>Tue, 07 Apr 2020 12:31:16 +0000</pubDate>
+      
+      <guid>https://homehub.tech/server-build-spec/</guid>
+      <description>
+        
+          &lt;img src=&#34;https://images.unsplash.com/photo-1560732488-6b0df240254a?ixlib=rb-1.2.1&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=2000&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjExNzczfQ&#34;/&gt;
+          
+        
+        
+        
+          I have been planning for a long time to build a server that is capable of running multiple Docker containers, Plex transcoding and a few Virtual Machines. For the past couple of years I have had a local Xpenology server that runs a version of Synology DSM without the need for Synology hardware. The hardware running this is quite old. DDR2 RAM and a motherboard that only has 2 SATA ports.
+          
+        
+        </description>
+    </item>
+    
+  </channel>
+</rss>

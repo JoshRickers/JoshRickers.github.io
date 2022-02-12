@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    
+      <title>
+        Jackett ::
+        Home Hub — Home Automation and Technology
+      </title>
+    
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta
+  name="description"
+  content=""
+/>
+<meta
+  name="keywords"
+  content=""
+/>
+<meta name="robots" content="noodp" />
+<link rel="canonical" href="https://homehub.tech/categories/jackett/" />
+
+
+
+
+
+<link rel="stylesheet" href="https://homehub.tech/assets/style.css" />
+
+<link rel="stylesheet" href="https://homehub.tech/style.css" />
+
+
+<link
+  rel="apple-touch-icon-precomposed"
+  sizes="144x144"
+  href="https://homehub.tech/img/apple-touch-icon-144-precomposed.png"
+/>
+<link rel="shortcut icon" href="https://homehub.tech/img/favicon.png" />
+
+
+<link href="https://homehub.tech/assets/fonts/Inter-Italic.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
+<link href="https://homehub.tech/assets/fonts/Inter-Regular.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
+<link href="https://homehub.tech/assets/fonts/Inter-Medium.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
+<link href="https://homehub.tech/assets/fonts/Inter-MediumItalic.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
+<link href="https://homehub.tech/assets/fonts/Inter-Bold.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
+<link href="https://homehub.tech/assets/fonts/Inter-BoldItalic.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
+
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Jackett"/>
+<meta name="twitter:description" content=""/>
+
+
+
+<meta property="og:title" content="Jackett" />
+<meta property="og:description" content="" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://homehub.tech/categories/jackett/" />
+<meta property="og:updated_time" content="2020-08-22T19:53:51+00:00" /><meta property="og:site_name" content="Home Hub" />
+
+
+
+<link rel="alternate" type="application/rss+xml" href="/categories/jackett/index.xml" title="Home Hub" />
+
+
+
+  </head>
+  <body class="dark-theme">
+    <div class="container">
+      <header class="header">
+  <span class="header__inner">
+    <a
+  href="/"
+  class="logo"
+  style="text-decoration: none;"
+>
+  
+    <span class="logo__mark"><svg xmlns="http://www.w3.org/2000/svg" class="greater-icon" viewBox="0 0 44 44">
+  <path fill="none" d="M15 8l14.729 14.382L15 35.367" />
+</svg>
+</span>
+    <span class="logo__text"
+      >Home Hub</span
+    >
+    <span class="logo__cursor"></span>
+  
+</a>
+
+    <span class="header__right">
+      
+      <span class="theme-toggle">
+        <svg
+  class="theme-toggler"
+  width="24"
+  height="24"
+  viewBox="0 0 48 48"
+  fill="none"
+  xmlns="http://www.w3.org/2000/svg"
+>
+  <path
+    d="M22 41C32.4934 41 41 32.4934 41 22C41 11.5066 32.4934 3 22
+  3C11.5066 3 3 11.5066 3 22C3 32.4934 11.5066 41 22 41ZM7 22C7
+  13.7157 13.7157 7 22 7V37C13.7157 37 7 30.2843 7 22Z"
+  />
+</svg>
+
+      </span>
+    </span>
+  </span>
+</header>
+
+
+      <div class="content">
+        
+  <div class="posts">
+    
+      <div class="post on-list">
+        <h1 class="post-title"><a href="https://homehub.tech/how-to-install-jackett-docker-unraid-sonarr/">How to install Jackett and connect with Sonarr on Unraid using Docker</a></h1>
+        <div class="post-meta">
+          
+            <span class="post-date">
+              2020-08-22
+            </span>
+
+            
+          
+          
+            <span class="post-author"
+              >— Written by Josh Rickers</span
+            >
+
+
+          
+        </div>
+
+        
+          <span class="post-tags">
+            
+              <a href="https://homehub.tech/tags/docker/">#Docker</a>&nbsp;
+            
+              <a href="https://homehub.tech/tags/automation/">#Automation</a>&nbsp;
+            
+              <a href="https://homehub.tech/tags/install/">#Install</a>&nbsp;
+            
+              <a href="https://homehub.tech/tags/jackett/">#Jackett</a>&nbsp;
+            
+              <a href="https://homehub.tech/tags/sonarr/">#Sonarr</a>&nbsp;
+            
+              <a href="https://homehub.tech/tags/unraid/">#Unraid</a>&nbsp;
+            
+          </span>
+        
+
+        
+          <figure class="post-cover">
+  
+    <img src="https://images.unsplash.com/photo-1452457750107-cd084dce177d?ixlib=rb-1.2.1&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=2000&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjExNzczfQ" alt="How to install Jackett and connect with Sonarr on Unraid using Docker"/>
+  
+
+  
+</figure>
+
+        
+
+        <div class="post-content">
+          
+            
+              My previous post set you up with installing Sonarr on Unraid but that was as far as we got. In this post I want to show you how to set up Jackett and connect to Sonarr so you can connect to torrent trackers that are not oficially suported by Sonarr. This also works for Radarr and has an extremely similar set.
+First thing first, lets install the Jackett Docker container. As always I will be using Linuxserver.
+            
+          
+        </div>
+        
+          <div>
+            <a class="read-more button" href="/how-to-install-jackett-docker-unraid-sonarr/"
+              >Read more →</a
+            >
+          </div>
+        
+      </div>
+    
+      <div class="post on-list">
+        <h1 class="post-title"><a href="https://homehub.tech/configuring-sonarr-and-jackett/">Configuring Sonarr and Jackett</a></h1>
+        <div class="post-meta">
+          
+            <span class="post-date">
+              2018-06-14
+            </span>
+
+            
+          
+          
+            <span class="post-author"
+              >— Written by Josh Rickers</span
+            >
+
+
+          
+        </div>
+
+        
+          <span class="post-tags">
+            
+              <a href="https://homehub.tech/tags/sonarr/">#Sonarr</a>&nbsp;
+            
+              <a href="https://homehub.tech/tags/jackett/">#Jackett</a>&nbsp;
+            
+              <a href="https://homehub.tech/tags/automation/">#Automation</a>&nbsp;
+            
+          </span>
+        
+
+        
+          <figure class="post-cover">
+  
+    <img src="https://images.unsplash.com/photo-1467293622093-9f15c96be70f?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjExNzczfQ&amp;s=8a1215e42a9aa062d5fb8b60d0ae81ad" alt="Configuring Sonarr and Jackett"/>
+  
+
+  
+</figure>
+
+        
+
+        <div class="post-content">
+          
+            
+              In one of my previous blog posts I explained how to install Sonarr, Jackett and RuTorrent using Docker. This is a follow on post from that with some information on how to configure both Sonarr and Jackett.
+I thought this would need a little explaining as I left out some details from the previous post as I thought it is pretty self explanatory but you can never be too helpful. I know it would have helped me a lot if there was a nice blog post or two explaining a few details when i was looking into setting everything up.
+            
+          
+        </div>
+        
+          <div>
+            <a class="read-more button" href="/configuring-sonarr-and-jackett/"
+              >Read more →</a
+            >
+          </div>
+        
+      </div>
+    
+      <div class="post on-list">
+        <h1 class="post-title"><a href="https://homehub.tech/automate-tv-shows-with-sonarr/">Automate TV Shows with Sonarr, RuTorrent and Jackett</a></h1>
+        <div class="post-meta">
+          
+            <span class="post-date">
+              2018-06-02
+            </span>
+
+            
+          
+          
+            <span class="post-author"
+              >— Written by Josh Rickers</span
+            >
+
+
+          
+        </div>
+
+        
+          <span class="post-tags">
+            
+              <a href="https://homehub.tech/tags/sonarr/">#Sonarr</a>&nbsp;
+            
+              <a href="https://homehub.tech/tags/jackett/">#Jackett</a>&nbsp;
+            
+              <a href="https://homehub.tech/tags/automation/">#Automation</a>&nbsp;
+            
+              <a href="https://homehub.tech/tags/rutorrent/">#RuTorrent</a>&nbsp;
+            
+              <a href="https://homehub.tech/tags/docker/">#Docker</a>&nbsp;
+            
+          </span>
+        
+
+        
+          <figure class="post-cover">
+  
+    <img src="https://images.unsplash.com/photo-1484662020986-75935d2ebc66?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjExNzczfQ&amp;s=f0c696512402f3c72b4fa3a6ca7f1a24" alt="Automate TV Shows with Sonarr, RuTorrent and Jackett"/>
+  
+
+  
+</figure>
+
+        
+
+        <div class="post-content">
+          
+            
+              Automating things in my life is something that I have been trying to do for some time now. Quick and easy automation is what I look for, especially for media. Who doesn&rsquo;t like having the latest episodes at hand to just stream whenever you want? I know I do and Sonarr provides just that.
+We are going to take a quick look at setting up Sonarr, RuTorrent and Jackett with our friend Docker.
+            
+          
+        </div>
+        
+          <div>
+            <a class="read-more button" href="/automate-tv-shows-with-sonarr/"
+              >Read more →</a
+            >
+          </div>
+        
+      </div>
+    
+    <div class="pagination">
+  <div class="pagination__buttons">
+    
+    
+  </div>
+</div>
+
+  </div>
+
+      </div>
+
+      
+        <footer class="footer">
+  <div class="footer__inner">
+    
+      <div class="copyright copyright--user">Home Hub</div>
+      
+  </div>
+</footer>
+
+<script src="https://homehub.tech/assets/main.js"></script>
+<script src="https://homehub.tech/assets/prism.js"></script>
+
+
+      
+    </div>
+
+    
+  </body>
+</html>

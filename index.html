@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+	<meta name="generator" content="Hugo 0.68.3" />
+    
+      <title>
+        Home Hub —
+        Home Automation and Technology
+      </title>
+    
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta
+  name="description"
+  content="Home Automation and Technology"
+/>
+<meta
+  name="keywords"
+  content=""
+/>
+<meta name="robots" content="noodp" />
+<link rel="canonical" href="https://homehub.tech/" />
+
+
+
+
+
+<link rel="stylesheet" href="https://homehub.tech/assets/style.css" />
+
+<link rel="stylesheet" href="https://homehub.tech/style.css" />
+
+
+<link
+  rel="apple-touch-icon-precomposed"
+  sizes="144x144"
+  href="https://homehub.tech/img/apple-touch-icon-144-precomposed.png"
+/>
+<link rel="shortcut icon" href="https://homehub.tech/img/favicon.png" />
+
+
+<link href="https://homehub.tech/assets/fonts/Inter-Italic.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
+<link href="https://homehub.tech/assets/fonts/Inter-Regular.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
+<link href="https://homehub.tech/assets/fonts/Inter-Medium.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
+<link href="https://homehub.tech/assets/fonts/Inter-MediumItalic.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
+<link href="https://homehub.tech/assets/fonts/Inter-Bold.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
+<link href="https://homehub.tech/assets/fonts/Inter-BoldItalic.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
+
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Home Hub"/>
+<meta name="twitter:description" content=""/>
+
+
+
+<meta property="og:title" content="Home Hub" />
+<meta property="og:description" content="" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://homehub.tech/" />
+<meta property="og:updated_time" content="2020-08-22T19:53:51+00:00" /><meta property="og:site_name" content="Home Hub" />
+
+
+
+<link rel="alternate" type="application/rss+xml" href="/index.xml" title="Home Hub" />
+
+
+
+  </head>
+  <body class="dark-theme">
+    <div class="container">
+      <header class="header">
+  <span class="header__inner">
+    <a
+  href="/"
+  class="logo"
+  style="text-decoration: none;"
+>
+  
+    <span class="logo__mark"><svg xmlns="http://www.w3.org/2000/svg" class="greater-icon" viewBox="0 0 44 44">
+  <path fill="none" d="M15 8l14.729 14.382L15 35.367" />
+</svg>
+</span>
+    <span class="logo__text"
+      >Home Hub</span
+    >
+    <span class="logo__cursor"></span>
+  
+</a>
+
+    <span class="header__right">
+      
+      <span class="theme-toggle">
+        <svg
+  class="theme-toggler"
+  width="24"
+  height="24"
+  viewBox="0 0 48 48"
+  fill="none"
+  xmlns="http://www.w3.org/2000/svg"
+>
+  <path
+    d="M22 41C32.4934 41 41 32.4934 41 22C41 11.5066 32.4934 3 22
+  3C11.5066 3 3 11.5066 3 22C3 32.4934 11.5066 41 22 41ZM7 22C7
+  13.7157 13.7157 7 22 7V37C13.7157 37 7 30.2843 7 22Z"
+  />
+</svg>
+
+      </span>
+    </span>
+  </span>
+</header>
+
+
+      <div class="content">
+        
+  
+  
+
+  
+  
+    
+  
+  
+
+  
+
+  <div class="posts">
+    
+    <div class="post on-list">
+      <h1 class="post-title"><a href="https://homehub.tech/how-to-install-jackett-docker-unraid-sonarr/">How to install Jackett and connect with Sonarr on Unraid using Docker</a></h1>
+      <div class="post-meta">
+        
+          <span class="post-date">
+            2020-08-22
+          </span>
+
+          
+        
+
+        
+          <span class="post-author">— Written by Josh Rickers</span>
+        
+
+        
+      </div>
+
+      
+        <span class="post-tags">
+          
+            <a href="https://homehub.tech/tags/docker/">#Docker</a>&nbsp;
+          
+            <a href="https://homehub.tech/tags/automation/">#Automation</a>&nbsp;
+          
+            <a href="https://homehub.tech/tags/install/">#Install</a>&nbsp;
+          
+            <a href="https://homehub.tech/tags/jackett/">#Jackett</a>&nbsp;
+          
+            <a href="https://homehub.tech/tags/sonarr/">#Sonarr</a>&nbsp;
+          
+            <a href="https://homehub.tech/tags/unraid/">#Unraid</a>&nbsp;
+          
+        </span>
+      
+
+      
+        <figure class="post-cover">
+  
+    <img src="https://images.unsplash.com/photo-1452457750107-cd084dce177d?ixlib=rb-1.2.1&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=2000&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjExNzczfQ" alt="How to install Jackett and connect with Sonarr on Unraid using Docker"/>
+  
+
+  
+</figure>
+
+      
+
+      <div class="post-content">
+        
+          
+            My previous post set you up with installing Sonarr on Unraid but that was as far as we got. In this post I want to show you how to set up Jackett and connect to Sonarr so you can connect to torrent trackers that are not oficially suported by Sonarr. This also works for Radarr and has an extremely similar set.
+First thing first, lets install the Jackett Docker container. As always I will be using Linuxserver.
+          
+        
+      </div>
+      
+        <div><a class="read-more button" href="/how-to-install-jackett-docker-unraid-sonarr/">Read more →</a></div>
+      
+    </div>
+    
+    <div class="post on-list">
+      <h1 class="post-title"><a href="https://homehub.tech/how-to-install-sonarr-unraid-docker/">How to Install Sonarr on Unraid using Docker</a></h1>
+      <div class="post-meta">
+        
+          <span class="post-date">
+            2020-05-24
+          </span>
+
+          
+        
+
+        
+          <span class="post-author">— Written by Josh Rickers</span>
+        
+
+        
+      </div>
+
+      
+        <span class="post-tags">
+          
+            <a href="https://homehub.tech/tags/unraid/">#Unraid</a>&nbsp;
+          
+            <a href="https://homehub.tech/tags/docker/">#Docker</a>&nbsp;
+          
+            <a href="https://homehub.tech/tags/sonarr/">#Sonarr</a>&nbsp;
+          
+        </span>
+      
+
+      
+        <figure class="post-cover">
+  
+    <img src="https://images.unsplash.com/photo-1576438112307-db9c736ff392?ixlib=rb-1.2.1&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=2000&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjExNzczfQ" alt="How to Install Sonarr on Unraid using Docker"/>
+  
+
+  
+</figure>
+
+      
+
+      <div class="post-content">
+        
+          
+            Installing Sonarr couldn&rsquo;t be any easier when installing using Docker on and Unraid server. Once you have the Community Applications plugin installed you are just a few clicks away from automating your TV show consumption.
+Community Applications Plugin First thing first. You need to install the Community Applications plugin. You can find a guide on how to do that HERE
+Shares Secondly you need to set up your shares. Shares are where Sonarr will be accessing your downloads and putting the TV shows on your Unraid server.
+          
+        
+      </div>
+      
+        <div><a class="read-more button" href="/how-to-install-sonarr-unraid-docker/">Read more →</a></div>
+      
+    </div>
+    
+    <div class="post on-list">
+      <h1 class="post-title"><a href="https://homehub.tech/how-to-install-unraid-community-application/">How to Install Unraid Community Applications Plugin</a></h1>
+      <div class="post-meta">
+        
+          <span class="post-date">
+            2020-05-24
+          </span>
+
+          
+        
+
+        
+          <span class="post-author">— Written by Josh Rickers</span>
+        
+
+        
+      </div>
+
+      
+        <span class="post-tags">
+          
+            <a href="https://homehub.tech/tags/unraid/">#Unraid</a>&nbsp;
+          
+            <a href="https://homehub.tech/tags/install/">#Install</a>&nbsp;
+          
+        </span>
+      
+
+      
+        <figure class="post-cover">
+  
+    <img src="https://images.unsplash.com/photo-1554098415-788601c80aef?ixlib=rb-1.2.1&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=2000&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjExNzczfQ" alt="How to Install Unraid Community Applications Plugin"/>
+  
+
+  
+</figure>
+
+      
+
+      <div class="post-content">
+        
+          
+            The Unraid Community Applications plugin is a plugin that gives you access to a wide range of useful plugins and containers all in one place. The Community Applications plugins is great for quick and easy install of other plugins, containers and applications.
+Installation Copy the following link https://raw.githubusercontent.com/Squidly271/community.applications/master/plugins/community.applications.plg and paste it into the Plugins &gt; Install Plugin page of your Unraid install and then press the Install button.
+ This will now add an &ldquo;APPS&rdquo; tab where you can access hundreds of community applications.
+          
+        
+      </div>
+      
+        <div><a class="read-more button" href="/how-to-install-unraid-community-application/">Read more →</a></div>
+      
+    </div>
+    
+    <div class="post on-list">
+      <h1 class="post-title"><a href="https://homehub.tech/firefox-spell-check-not-working/">Firefox Spell Check not working?</a></h1>
+      <div class="post-meta">
+        
+          <span class="post-date">
+            2020-04-08
+          </span>
+
+          
+        
+
+        
+          <span class="post-author">— Written by Josh Rickers</span>
+        
+
+        
+      </div>
+
+      
+        <span class="post-tags">
+          
+            <a href="https://homehub.tech/tags/firefox/">#Firefox</a>&nbsp;
+          
+        </span>
+      
+
+      
+        <figure class="post-cover">
+  
+    <img src="https://images.unsplash.com/photo-1583361704493-d4d4d1b1d70a?ixlib=rb-1.2.1&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=2000&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjExNzczfQ" alt="Firefox Spell Check not working?"/>
+  
+
+  
+</figure>
+
+      
+
+      <div class="post-content">
+        
+          
+            I noticed that while typing out my previous post that Firefox was not automatically spell checking as I was typing. Coming from Chrome which does this automatically I thought this was something that should work out of the box.
+It looks like you need to have a dictionary installed, language pack installed and the option to check spelling ticked.
+Make sure you have spell checking enabled. Menu &gt; Options &gt; search for spell check.
+          
+        
+      </div>
+      
+        <div><a class="read-more button" href="/firefox-spell-check-not-working/">Read more →</a></div>
+      
+    </div>
+    
+    <div class="post on-list">
+      <h1 class="post-title"><a href="https://homehub.tech/server-build-spec/">Server Build Spec</a></h1>
+      <div class="post-meta">
+        
+          <span class="post-date">
+            2020-04-07
+          </span>
+
+          
+        
+
+        
+          <span class="post-author">— Written by Josh Rickers</span>
+        
+
+        
+      </div>
+
+      
+        <span class="post-tags">
+          
+            <a href="https://homehub.tech/tags/server/">#Server</a>&nbsp;
+          
+        </span>
+      
+
+      
+        <figure class="post-cover">
+  
+    <img src="https://images.unsplash.com/photo-1560732488-6b0df240254a?ixlib=rb-1.2.1&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=2000&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjExNzczfQ" alt="Server Build Spec"/>
+  
+
+  
+</figure>
+
+      
+
+      <div class="post-content">
+        
+          
+            I have been planning for a long time to build a server that is capable of running multiple Docker containers, Plex transcoding and a few Virtual Machines. For the past couple of years I have had a local Xpenology server that runs a version of Synology DSM without the need for Synology hardware. The hardware running this is quite old. DDR2 RAM and a motherboard that only has 2 SATA ports.
+          
+        
+      </div>
+      
+        <div><a class="read-more button" href="/server-build-spec/">Read more →</a></div>
+      
+    </div>
+    
+    <div class="pagination">
+  <div class="pagination__buttons">
+    
+    
+      <span class="button next">
+        <a href="/page/2/">
+          <span class="button__text">Older posts</span>
+          <span class="button__icon">→</span>
+        </a>
+      </span>
+    
+  </div>
+</div>
+
+  </div>
+
+      </div>
+
+      
+        <footer class="footer">
+  <div class="footer__inner">
+    
+      <div class="copyright copyright--user">Home Hub</div>
+      
+  </div>
+</footer>
+
+<script src="https://homehub.tech/assets/main.js"></script>
+<script src="https://homehub.tech/assets/prism.js"></script>
+
+
+      
+    </div>
+
+    
+  </body>
+</html>

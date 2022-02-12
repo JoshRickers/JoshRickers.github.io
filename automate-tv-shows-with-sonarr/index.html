@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    
+      <title>
+        Automate TV Shows with Sonarr, RuTorrent and Jackett ::
+        Home Hub — Home Automation and Technology
+      </title>
+    
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta
+  name="description"
+  content="Automating things in my life is something that I have been trying to do for some time now. Quick and easy automation is what I look for, especially for media. Who doesn&amp;rsquo;t like having the latest episodes at hand to just stream whenever you want? I know I do and Sonarr provides just that.
+We are going to take a quick look at setting up Sonarr, RuTorrent and Jackett with our friend Docker."
+/>
+<meta
+  name="keywords"
+  content=""
+/>
+<meta name="robots" content="noodp" />
+<link rel="canonical" href="https://homehub.tech/automate-tv-shows-with-sonarr/" />
+
+
+
+
+
+<link rel="stylesheet" href="https://homehub.tech/assets/style.css" />
+
+<link rel="stylesheet" href="https://homehub.tech/style.css" />
+
+
+<link
+  rel="apple-touch-icon-precomposed"
+  sizes="144x144"
+  href="https://homehub.tech/img/apple-touch-icon-144-precomposed.png"
+/>
+<link rel="shortcut icon" href="https://homehub.tech/img/favicon.png" />
+
+
+<link href="https://homehub.tech/assets/fonts/Inter-Italic.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
+<link href="https://homehub.tech/assets/fonts/Inter-Regular.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
+<link href="https://homehub.tech/assets/fonts/Inter-Medium.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
+<link href="https://homehub.tech/assets/fonts/Inter-MediumItalic.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
+<link href="https://homehub.tech/assets/fonts/Inter-Bold.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
+<link href="https://homehub.tech/assets/fonts/Inter-BoldItalic.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
+
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Automate TV Shows with Sonarr, RuTorrent and Jackett"/>
+<meta name="twitter:description" content="Automating things in my life is something that I have been trying to do for some time now. Quick and easy automation is what I look for, especially for media. Who doesn&rsquo;t like having the latest episodes at hand to just stream whenever you want? I know I do and Sonarr provides just that.
+We are going to take a quick look at setting up Sonarr, RuTorrent and Jackett with our friend Docker."/>
+
+
+
+<meta property="og:title" content="Automate TV Shows with Sonarr, RuTorrent and Jackett" />
+<meta property="og:description" content="Automating things in my life is something that I have been trying to do for some time now. Quick and easy automation is what I look for, especially for media. Who doesn&rsquo;t like having the latest episodes at hand to just stream whenever you want? I know I do and Sonarr provides just that.
+We are going to take a quick look at setting up Sonarr, RuTorrent and Jackett with our friend Docker." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://homehub.tech/automate-tv-shows-with-sonarr/" />
+<meta property="article:published_time" content="2018-06-02T20:48:28+00:00" />
+<meta property="article:modified_time" content="2018-06-02T20:48:28+00:00" /><meta property="og:site_name" content="Home Hub" />
+
+
+
+
+
+
+  </head>
+  <body class="dark-theme">
+    <div class="container">
+      <header class="header">
+  <span class="header__inner">
+    <a
+  href="/"
+  class="logo"
+  style="text-decoration: none;"
+>
+  
+    <span class="logo__mark"><svg xmlns="http://www.w3.org/2000/svg" class="greater-icon" viewBox="0 0 44 44">
+  <path fill="none" d="M15 8l14.729 14.382L15 35.367" />
+</svg>
+</span>
+    <span class="logo__text"
+      >Home Hub</span
+    >
+    <span class="logo__cursor"></span>
+  
+</a>
+
+    <span class="header__right">
+      
+      <span class="theme-toggle">
+        <svg
+  class="theme-toggler"
+  width="24"
+  height="24"
+  viewBox="0 0 48 48"
+  fill="none"
+  xmlns="http://www.w3.org/2000/svg"
+>
+  <path
+    d="M22 41C32.4934 41 41 32.4934 41 22C41 11.5066 32.4934 3 22
+  3C11.5066 3 3 11.5066 3 22C3 32.4934 11.5066 41 22 41ZM7 22C7
+  13.7157 13.7157 7 22 7V37C13.7157 37 7 30.2843 7 22Z"
+  />
+</svg>
+
+      </span>
+    </span>
+  </span>
+</header>
+
+
+      <div class="content">
+        
+  
+  
+
+  <div class="post">
+    <h1 class="post-title">Automate TV Shows with Sonarr, RuTorrent and Jackett</h1>
+    <div class="post-meta">
+      
+        <span class="post-date">
+          2018-06-02
+        </span>
+
+        
+          
+        
+      
+
+      
+        <span class="post-author"
+          >— Written by Josh Rickers</span
+        >
+
+
+      
+    </div>
+
+    
+      <span class="post-tags">
+        
+          <a href="https://homehub.tech/tags/sonarr/">#Sonarr</a>&nbsp;
+        
+          <a href="https://homehub.tech/tags/jackett/">#Jackett</a>&nbsp;
+        
+          <a href="https://homehub.tech/tags/automation/">#Automation</a>&nbsp;
+        
+          <a href="https://homehub.tech/tags/rutorrent/">#RuTorrent</a>&nbsp;
+        
+          <a href="https://homehub.tech/tags/docker/">#Docker</a>&nbsp;
+        
+      </span>
+    
+
+    
+      <figure class="post-cover">
+  
+    <img src="https://images.unsplash.com/photo-1484662020986-75935d2ebc66?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjExNzczfQ&amp;s=f0c696512402f3c72b4fa3a6ca7f1a24" alt="Automate TV Shows with Sonarr, RuTorrent and Jackett"/>
+  
+
+  
+</figure>
+
+    
+
+    <div class="post-content">
+      
+      <p>Automating things in my life is something that I have been trying to do for some time now. Quick and easy automation is what I look for, especially for media. Who doesn&rsquo;t like having the latest episodes at hand to just stream whenever you want? I know I do and Sonarr provides just that.</p>
+<p>We are going to take a quick look at setting up Sonarr, RuTorrent and Jackett with our friend Docker.</p>
+<h2 id="rutorrent">RuTorrent</h2>
+<p>RuTorrent is a gui for rTorrent, a torrent client available for Linux. I have been using RuTorrent for many years and running it through Docker is by far the most easiest way of setting it up.</p>
+<p><a href="https://hub.docker.com/u/linuxserver/">Linuxserver.io</a> have a great selection of Docker containers and we are going to take full advantage of this.</p>
+<p>Run the following command to set up the container making sure to create the RuTorrent directory first and changing the time zone and ports.</p>
+<pre><code>docker create --name=rutorrent -v /path/to/rutorrent/config:/config -v /path/to/rutorrent/downloads:/downloads -e PUID=1000 -e PGID=1000 -e TZ=Europe/London -p 8686:80 -p 5000:5000 -p 51413:51413 -p 6881:6881/udp linuxserver/rutorrent
+</code></pre><p>Then run</p>
+<pre><code>docker start rutorrent
+</code></pre><p>Browse to http://yourip:8686 and you should see the RuTorrent gui. Check through some of the settings to make sure everything is how you want and you should be good to go.</p>
+<h2 id="jackett">Jackett</h2>
+<p>Jacket is what we will be using to interface with torrent trackers. Sonarr does not handle this well on its own so we need Jacket to do a better job for us.</p>
+<p>Again, we will be using a <a href="https://hub.docker.com/r/linuxserver/jackett/">linuxserver.io container</a> for this.</p>
+<p>Run the following command making sure to create the jackett directory first and changing the timezone.</p>
+<pre><code>docker create --name=jackett -v /path/to/jackett/config:/config -v /path/to/rutorrent/downloads:/downloads -e PUID=1000 -e PGID=1000 -e TZ=Europe/London -v /etc/localtime:/etc/localtime:ro -p 9117:9117  linuxserver/jackett
+</code></pre><p>Then run</p>
+<pre><code>docker start jackett
+</code></pre><p>Browse to http://yourip:9117 and you will see the Jackett interface. Configuring Jackett is pretty straight forward.</p>
+<h2 id="sonarr">Sonarr</h2>
+<p>Sonarr will automate your TV show searches and downloads. I had previously used Sickrage but after starting a fresh server install I was looking for something a little bit more modern and I was suggested Sonarr.
+Sonarr is mainly used with Usenet indexers but there is some basic functionality for Torrent sites. Jackett will treat Torrent sites like Usenet indexers and report back everything needed for many trackers.</p>
+<p>As I mentioned above, we will be using a Docker container to run Sonarr. <a href="https://hub.docker.com/u/linuxserver/">linuxserver.io</a> provide a nice and easy <a href="https://hub.docker.com/r/linuxserver/sonarr/">Sonarr container</a>.</p>
+<p>Create a Sonarr directory, a directory where you want to save your TV show and make note of where your downloads will be. For me this will be the location of my rutorrent downloads folder.</p>
+<p>Run the following command to set everything up.</p>
+<pre><code>docker create --name sonarr -p 8989:8989 -e PUID=1000 -e PGID=1000 -e TZ=Europe/London -v /etc/localtime:/etc/localtime:ro -v /path/to/sonarr/dir:/config -v /path/to/tv/dir:/tv -v /path/to/download/dir:/downloads linuxserver/sonarr
+</code></pre><p>Now run</p>
+<pre><code>docker start sonarr
+</code></pre><p>Browse to http://yourIP:8989 and you should see Sonarr. Sonarr will need to be configured to use Jackett but this is simple. Once that has been done TV shows can now be added. Sonarr will search for them via Jackett, import the torrent into RuTorrent and then post process once the download has finished.</p>
+<h2 id="post-installation">Post Installation</h2>
+<p>Now you can use something like Kodi to scan the TV directory and have all the TV shows all in one place. Kodi on a Raspberry Pi is a great combo for this type of automation.</p>
+<p>Consider setting up reverse proxies for each of the services with a domain or sub-domain to help with easy access. Remembering IP addresses and port numbers is hard so make life easy with a reverse proxy. You can refer back to one of my <a href="/docker-nginx-and-lets-encrypt/">previous posts</a> about setting up Ghost with a reverse proxy, the config for Sonarr, RuTorrent and Jackett will be extremely similar.</p>
+
+    </div>
+    
+      
+        <div class="pagination">
+          <div class="pagination__title">
+            <span class="pagination__title-h"
+              >Read other posts</span
+            >
+            <hr />
+          </div>
+          <div class="pagination__buttons">
+            
+              <span class="button previous">
+                <a href="https://homehub.tech/automate-film-downloads-with-radarr/">
+                  <span class="button__icon">←</span>
+                  <span class="button__text">Automate Movie downloads with Radarr and RuTorrent</span>
+                </a>
+              </span>
+            
+            
+              <span class="button next">
+                <a href="https://homehub.tech/docker-nginx-and-lets-encrypt/">
+                  <span class="button__text">Docker, Nginx and Let&#39;s Encrypt</span>
+                  <span class="button__icon">→</span>
+                </a>
+              </span>
+            
+          </div>
+        </div>
+      
+    
+
+    
+      
+        
+
+      
+    
+  </div>
+
+      </div>
+
+      
+        <footer class="footer">
+  <div class="footer__inner">
+    
+      <div class="copyright copyright--user">Home Hub</div>
+      
+  </div>
+</footer>
+
+<script src="https://homehub.tech/assets/main.js"></script>
+<script src="https://homehub.tech/assets/prism.js"></script>
+
+
+      
+    </div>
+
+    
+  </body>
+</html>

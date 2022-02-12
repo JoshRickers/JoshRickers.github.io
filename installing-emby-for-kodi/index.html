@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    
+      <title>
+        Installing Emby for Kodi ::
+        Home Hub — Home Automation and Technology
+      </title>
+    
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta
+  name="description"
+  content="Kodi is a wonderful media client and I have been using it for many years now. I have been adding more clients to my home recently and have noticed some slight annoyances. The main one is the lack of synchronisation between Kodi clients. This can be solved with a MySQL server keeping track of everything but I don&amp;rsquo;t have anything running locally to do this. Emby and the Kodi addon Emby for Kodi has fixed the synchronisation annoyance."
+/>
+<meta
+  name="keywords"
+  content=""
+/>
+<meta name="robots" content="noodp" />
+<link rel="canonical" href="https://homehub.tech/installing-emby-for-kodi/" />
+
+
+
+
+
+<link rel="stylesheet" href="https://homehub.tech/assets/style.css" />
+
+<link rel="stylesheet" href="https://homehub.tech/style.css" />
+
+
+<link
+  rel="apple-touch-icon-precomposed"
+  sizes="144x144"
+  href="https://homehub.tech/img/apple-touch-icon-144-precomposed.png"
+/>
+<link rel="shortcut icon" href="https://homehub.tech/img/favicon.png" />
+
+
+<link href="https://homehub.tech/assets/fonts/Inter-Italic.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
+<link href="https://homehub.tech/assets/fonts/Inter-Regular.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
+<link href="https://homehub.tech/assets/fonts/Inter-Medium.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
+<link href="https://homehub.tech/assets/fonts/Inter-MediumItalic.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
+<link href="https://homehub.tech/assets/fonts/Inter-Bold.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
+<link href="https://homehub.tech/assets/fonts/Inter-BoldItalic.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
+
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Installing Emby for Kodi"/>
+<meta name="twitter:description" content="Kodi is a wonderful media client and I have been using it for many years now. I have been adding more clients to my home recently and have noticed some slight annoyances. The main one is the lack of synchronisation between Kodi clients. This can be solved with a MySQL server keeping track of everything but I don&rsquo;t have anything running locally to do this. Emby and the Kodi addon Emby for Kodi has fixed the synchronisation annoyance."/>
+
+
+
+<meta property="og:title" content="Installing Emby for Kodi" />
+<meta property="og:description" content="Kodi is a wonderful media client and I have been using it for many years now. I have been adding more clients to my home recently and have noticed some slight annoyances. The main one is the lack of synchronisation between Kodi clients. This can be solved with a MySQL server keeping track of everything but I don&rsquo;t have anything running locally to do this. Emby and the Kodi addon Emby for Kodi has fixed the synchronisation annoyance." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://homehub.tech/installing-emby-for-kodi/" />
+<meta property="article:published_time" content="2019-01-23T11:31:34+00:00" />
+<meta property="article:modified_time" content="2019-01-23T11:31:34+00:00" /><meta property="og:site_name" content="Home Hub" />
+
+
+
+
+
+
+  </head>
+  <body class="dark-theme">
+    <div class="container">
+      <header class="header">
+  <span class="header__inner">
+    <a
+  href="/"
+  class="logo"
+  style="text-decoration: none;"
+>
+  
+    <span class="logo__mark"><svg xmlns="http://www.w3.org/2000/svg" class="greater-icon" viewBox="0 0 44 44">
+  <path fill="none" d="M15 8l14.729 14.382L15 35.367" />
+</svg>
+</span>
+    <span class="logo__text"
+      >Home Hub</span
+    >
+    <span class="logo__cursor"></span>
+  
+</a>
+
+    <span class="header__right">
+      
+      <span class="theme-toggle">
+        <svg
+  class="theme-toggler"
+  width="24"
+  height="24"
+  viewBox="0 0 48 48"
+  fill="none"
+  xmlns="http://www.w3.org/2000/svg"
+>
+  <path
+    d="M22 41C32.4934 41 41 32.4934 41 22C41 11.5066 32.4934 3 22
+  3C11.5066 3 3 11.5066 3 22C3 32.4934 11.5066 41 22 41ZM7 22C7
+  13.7157 13.7157 7 22 7V37C13.7157 37 7 30.2843 7 22Z"
+  />
+</svg>
+
+      </span>
+    </span>
+  </span>
+</header>
+
+
+      <div class="content">
+        
+  
+  
+
+  <div class="post">
+    <h1 class="post-title">Installing Emby for Kodi</h1>
+    <div class="post-meta">
+      
+        <span class="post-date">
+          2019-01-23
+        </span>
+
+        
+          
+        
+      
+
+      
+        <span class="post-author"
+          >— Written by Josh Rickers</span
+        >
+
+
+      
+    </div>
+
+    
+      <span class="post-tags">
+        
+          <a href="https://homehub.tech/tags/emby/">#Emby</a>&nbsp;
+        
+          <a href="https://homehub.tech/tags/kodi/">#Kodi</a>&nbsp;
+        
+      </span>
+    
+
+    
+      <figure class="post-cover">
+  
+    <img src="https://homehub.tech/images/2019/01/Emby-Kodi.PNG" alt="Installing Emby for Kodi"/>
+  
+
+  
+</figure>
+
+    
+
+    <div class="post-content">
+      
+      <p>Kodi is a wonderful media client and I have been using it for many years now. I have been adding more clients to my home recently and have noticed some slight annoyances. The main one is the lack of synchronisation between Kodi clients. This can be solved with a MySQL server keeping track of everything but I don&rsquo;t have anything running locally to do this. Emby and the Kodi addon Emby for Kodi has fixed the synchronisation annoyance.</p>
+<p>Emby is a media server that will store meta data, stream, transcode and synchronise all of your media in one place. I have this running on the server that stores all of my media. It is running on a Docker container which, in my opinion, is the easiest way. See <a href="/emby-media-server-with-docker/">this blog post</a> on how to install Emby using Docker.</p>
+<p>Emby for Kodi is an addon that will sync your Emby server with your Kodi client.</p>
+<h2 id="installing-emby-for-kodi">Installing Emby for Kodi</h2>
+<p>This install works best on a fresh install of Kodi. At the time of writing this the current version of Kodi is 17.6.</p>
+<p>Settings &gt; File Manager &gt; Add source. Type <a href="http://kodi.emby.media">http://kodi.emby.media</a> and give the media source a name. Click OK.</p>
+
+  <figure class="left" >
+    <img src="/images/2019/01/image-4.png"   />
+    
+  </figure>
+
+
+<p>Now browse to Add-ons, click the box icon in the top left corner and click Install from Zip file. If this is a fresh install you will get asked to allow unknown sources.</p>
+
+  <figure class="left" >
+    <img src="/images/2019/01/image-5.png"   />
+    
+  </figure>
+
+
+
+  <figure class="left" >
+    <img src="/images/2019/01/image-6.png"   />
+    
+  </figure>
+
+
+<p>Click settings and then toggle Unknown sources. Press yes and go back to the Install from zip menu.</p>
+
+  <figure class="left" >
+    <img src="/images/2019/01/image-7.png"   />
+    
+  </figure>
+
+
+<p>Click on <a href="http://kodi.emby.media">http://kodi.emby.media</a> source you added earlier. Then click on repository.emby.kodi-x.x.x.zip.</p>
+
+  <figure class="left" >
+    <img src="/images/2019/01/image-8.png"   />
+    
+  </figure>
+
+
+<p>Now click on install from repository &gt; Kodi Emby Addons &gt; Video Addons &gt; Emby. Then click Install.</p>
+
+  <figure class="left" >
+    <img src="/images/2019/01/image-9.png"   />
+    
+  </figure>
+
+
+<p>Once the install is complete you will get asked to sign in to your Emby server. You can do this using Emby Connect or by manually adding the server. Once added you will be asked to log in to an account if you have a password set up on the Emby server. You will then be asked to choose which play back mode you would like to use. I suggest using the default Addon option.</p>
+
+  <figure class="left" >
+    <img src="/images/2019/01/image-10.png"   />
+    
+  </figure>
+
+
+<p>It will ask you if you want to disable the Emby music library. This is up to you and whether or not you have music on your Emby server.</p>
+<p>Browse back to Movies and TV and you should have all the media synced directly to your Kodi client.</p>
+
+  <figure class="left" >
+    <img src="/images/2019/01/image-11.png"   />
+    
+  </figure>
+
+
+
+    </div>
+    
+      
+        <div class="pagination">
+          <div class="pagination__title">
+            <span class="pagination__title-h"
+              >Read other posts</span
+            >
+            <hr />
+          </div>
+          <div class="pagination__buttons">
+            
+              <span class="button previous">
+                <a href="https://homehub.tech/server-build-spec/">
+                  <span class="button__icon">←</span>
+                  <span class="button__text">Server Build Spec</span>
+                </a>
+              </span>
+            
+            
+              <span class="button next">
+                <a href="https://homehub.tech/emby-media-server-with-docker/">
+                  <span class="button__text">Emby Media Server with Docker</span>
+                  <span class="button__icon">→</span>
+                </a>
+              </span>
+            
+          </div>
+        </div>
+      
+    
+
+    
+      
+        
+
+      
+    
+  </div>
+
+      </div>
+
+      
+        <footer class="footer">
+  <div class="footer__inner">
+    
+      <div class="copyright copyright--user">Home Hub</div>
+      
+  </div>
+</footer>
+
+<script src="https://homehub.tech/assets/main.js"></script>
+<script src="https://homehub.tech/assets/prism.js"></script>
+
+
+      
+    </div>
+
+    
+  </body>
+</html>

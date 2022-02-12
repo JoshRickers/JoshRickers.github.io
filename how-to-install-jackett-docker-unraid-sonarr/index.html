@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    
+      <title>
+        How to install Jackett and connect with Sonarr on Unraid using Docker ::
+        Home Hub — Home Automation and Technology
+      </title>
+    
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta
+  name="description"
+  content="My previous post set you up with installing Sonarr on Unraid but that was as far as we got. In this post I want to show you how to set up Jackett and connect to Sonarr so you can connect to torrent trackers that are not oficially suported by Sonarr. This also works for Radarr and has an extremely similar set.
+First thing first, lets install the Jackett Docker container. As always I will be using Linuxserver."
+/>
+<meta
+  name="keywords"
+  content=""
+/>
+<meta name="robots" content="noodp" />
+<link rel="canonical" href="https://homehub.tech/how-to-install-jackett-docker-unraid-sonarr/" />
+
+
+
+
+
+<link rel="stylesheet" href="https://homehub.tech/assets/style.css" />
+
+<link rel="stylesheet" href="https://homehub.tech/style.css" />
+
+
+<link
+  rel="apple-touch-icon-precomposed"
+  sizes="144x144"
+  href="https://homehub.tech/img/apple-touch-icon-144-precomposed.png"
+/>
+<link rel="shortcut icon" href="https://homehub.tech/img/favicon.png" />
+
+
+<link href="https://homehub.tech/assets/fonts/Inter-Italic.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
+<link href="https://homehub.tech/assets/fonts/Inter-Regular.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
+<link href="https://homehub.tech/assets/fonts/Inter-Medium.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
+<link href="https://homehub.tech/assets/fonts/Inter-MediumItalic.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
+<link href="https://homehub.tech/assets/fonts/Inter-Bold.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
+<link href="https://homehub.tech/assets/fonts/Inter-BoldItalic.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
+
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="How to install Jackett and connect with Sonarr on Unraid using Docker"/>
+<meta name="twitter:description" content="My previous post set you up with installing Sonarr on Unraid but that was as far as we got. In this post I want to show you how to set up Jackett and connect to Sonarr so you can connect to torrent trackers that are not oficially suported by Sonarr. This also works for Radarr and has an extremely similar set.
+First thing first, lets install the Jackett Docker container. As always I will be using Linuxserver."/>
+
+
+
+<meta property="og:title" content="How to install Jackett and connect with Sonarr on Unraid using Docker" />
+<meta property="og:description" content="My previous post set you up with installing Sonarr on Unraid but that was as far as we got. In this post I want to show you how to set up Jackett and connect to Sonarr so you can connect to torrent trackers that are not oficially suported by Sonarr. This also works for Radarr and has an extremely similar set.
+First thing first, lets install the Jackett Docker container. As always I will be using Linuxserver." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://homehub.tech/how-to-install-jackett-docker-unraid-sonarr/" />
+<meta property="article:published_time" content="2020-08-22T19:53:51+00:00" />
+<meta property="article:modified_time" content="2020-08-22T19:53:51+00:00" /><meta property="og:site_name" content="Home Hub" />
+
+
+
+
+
+
+  </head>
+  <body class="dark-theme">
+    <div class="container">
+      <header class="header">
+  <span class="header__inner">
+    <a
+  href="/"
+  class="logo"
+  style="text-decoration: none;"
+>
+  
+    <span class="logo__mark"><svg xmlns="http://www.w3.org/2000/svg" class="greater-icon" viewBox="0 0 44 44">
+  <path fill="none" d="M15 8l14.729 14.382L15 35.367" />
+</svg>
+</span>
+    <span class="logo__text"
+      >Home Hub</span
+    >
+    <span class="logo__cursor"></span>
+  
+</a>
+
+    <span class="header__right">
+      
+      <span class="theme-toggle">
+        <svg
+  class="theme-toggler"
+  width="24"
+  height="24"
+  viewBox="0 0 48 48"
+  fill="none"
+  xmlns="http://www.w3.org/2000/svg"
+>
+  <path
+    d="M22 41C32.4934 41 41 32.4934 41 22C41 11.5066 32.4934 3 22
+  3C11.5066 3 3 11.5066 3 22C3 32.4934 11.5066 41 22 41ZM7 22C7
+  13.7157 13.7157 7 22 7V37C13.7157 37 7 30.2843 7 22Z"
+  />
+</svg>
+
+      </span>
+    </span>
+  </span>
+</header>
+
+
+      <div class="content">
+        
+  
+  
+
+  <div class="post">
+    <h1 class="post-title">How to install Jackett and connect with Sonarr on Unraid using Docker</h1>
+    <div class="post-meta">
+      
+        <span class="post-date">
+          2020-08-22
+        </span>
+
+        
+          
+        
+      
+
+      
+        <span class="post-author"
+          >— Written by Josh Rickers</span
+        >
+
+
+      
+    </div>
+
+    
+      <span class="post-tags">
+        
+          <a href="https://homehub.tech/tags/docker/">#Docker</a>&nbsp;
+        
+          <a href="https://homehub.tech/tags/automation/">#Automation</a>&nbsp;
+        
+          <a href="https://homehub.tech/tags/install/">#Install</a>&nbsp;
+        
+          <a href="https://homehub.tech/tags/jackett/">#Jackett</a>&nbsp;
+        
+          <a href="https://homehub.tech/tags/sonarr/">#Sonarr</a>&nbsp;
+        
+          <a href="https://homehub.tech/tags/unraid/">#Unraid</a>&nbsp;
+        
+      </span>
+    
+
+    
+      <figure class="post-cover">
+  
+    <img src="https://images.unsplash.com/photo-1452457750107-cd084dce177d?ixlib=rb-1.2.1&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=2000&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjExNzczfQ" alt="How to install Jackett and connect with Sonarr on Unraid using Docker"/>
+  
+
+  
+</figure>
+
+    
+
+    <div class="post-content">
+      
+      <p>My previous post set you up with installing Sonarr on Unraid but that was as far as we got. In this post I want to show you how to set up Jackett and connect to Sonarr so you can connect to torrent trackers that are not oficially suported by Sonarr. This also works for Radarr and has an extremely similar set.</p>
+<p>First thing first, lets install the Jackett Docker container. As always I will be using Linuxserver.io containers. You will need to browse to your the Apps tab and then search for Jackett, click on the icon for the containter you want and then click install.</p>
+
+  <figure class="left" >
+    <img src="/images/2020/08/image.png"   />
+    
+  </figure>
+
+
+<p>Now for the settings. You want to have something similar to the settings in the screenshot below.Name: The name you want to call the containerRepository: The repository (probably wont need to change this)Network Type: You can leave this as defaultHost Port 1: This is the port user for the container. Make sure this is unique.Host Path 2: This needs to be the full path to your downloads folder. I am using the rutorrent container and the file path I have set here is the download folder set in the rutorrent container. Key 1: This can be left as default unless you have changed the PUIDKey 2: This can be ledt as default unless you have changed the PGID</p>
+
+  <figure class="left" >
+    <img src="/images/2020/08/image-1.png"   />
+    
+  </figure>
+
+
+<p>Then click apply. This will then download and install the docker container.</p>
+<p>Once this is installed you can then click on the image icon and then click WebUI. This will open the Jackett web interface. Once the interface as load you need to make a note of the api key in the top right corner. Open Sonarr and then go to settings &gt; Indexers. Click the big plus sign and select Torznab. For the URL you need to go back to the jackket and click on Copy Torznab Feed button. Past this into the URL box.In the API Key box, copy and paste the API Key we made a note of earlier from Jackett. You can then select the Categories used by the torrent tracker. Click test to make sure it all links up and then click save.</p>
+
+  <figure class="left" >
+    <img src="/images/2020/08/image-3.png"   />
+    
+  </figure>
+
+
+<p>Back into Jackett and we can click Add Indexer. Scroll through /  search for the site you use and click the configure button (spanner icon). From here you can see a list of categories and also fields for log in credentials. Fill these out and click OK.</p>
+<p>You will now be able to search for TV shows in Sonarr using torrent trackers.</p>
+
+    </div>
+    
+      
+        <div class="pagination">
+          <div class="pagination__title">
+            <span class="pagination__title-h"
+              >Read other posts</span
+            >
+            <hr />
+          </div>
+          <div class="pagination__buttons">
+            
+            
+              <span class="button next">
+                <a href="https://homehub.tech/how-to-install-sonarr-unraid-docker/">
+                  <span class="button__text">How to Install Sonarr on Unraid using Docker</span>
+                  <span class="button__icon">→</span>
+                </a>
+              </span>
+            
+          </div>
+        </div>
+      
+    
+
+    
+      
+        
+
+      
+    
+  </div>
+
+      </div>
+
+      
+        <footer class="footer">
+  <div class="footer__inner">
+    
+      <div class="copyright copyright--user">Home Hub</div>
+      
+  </div>
+</footer>
+
+<script src="https://homehub.tech/assets/main.js"></script>
+<script src="https://homehub.tech/assets/prism.js"></script>
+
+
+      
+    </div>
+
+    
+  </body>
+</html>
